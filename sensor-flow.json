@@ -1,0 +1,88 @@
+[
+    {
+        "id": "inject_node",
+        "type": "inject",
+        "z": "flow1",
+        "name": "Trigger every 5 sec",
+        "props": [],
+        "repeat": "5",
+        "once": true,
+        "onceDelay": "1",
+        "x": 120,
+        "y": 120,
+        "wires": [["generate_temp"]]
+    },
+    {
+        "id": "generate_temp",
+        "type": "function",
+        "z": "flow1",
+        "name": "Generate Temperature",
+        "func": "msg.headers = { \"Content-Type\": \"application/json\" };\n\nmsg.payload = {\n    sensorId: \"SENSOR_1\",\n    binId: \"BIN_101\",\n    tempC: parseFloat((Math.random() * 12).toFixed(2)),\n    timestamp: new Date().toISOString()\n};\n\nflow.set(\"lastUpdate\", Date.now());\n\nreturn msg;",
+        "outputs": 1,
+        "x": 350,
+        "y": 120,
+        "wires": [["http_request"]]
+    },
+    {
+        "id": "http_request",
+        "type": "http request",
+        "z": "flow1",
+        "name": "Send to Backend",
+        "method": "POST",
+        "ret": "obj",
+        "url": "http://localhost:3000/api/sensors",
+        "x": 580,
+        "y": 120,
+        "wires": [["backend_debug"]]
+    },
+    {
+        "id": "backend_debug",
+        "type": "debug",
+        "z": "flow1",
+        "name": "Backend Response",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "complete": "payload",
+        "x": 820,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "watchdog_inject",
+        "type": "inject",
+        "z": "flow1",
+        "name": "Watchdog Check (5 sec)",
+        "props": [],
+        "repeat": "5",
+        "once": true,
+        "onceDelay": "3",
+        "x": 150,
+        "y": 220,
+        "wires": [["watchdog_function"]]
+    },
+    {
+        "id": "watchdog_function",
+        "type": "function",
+        "z": "flow1",
+        "name": "Sensor Watchdog",
+        "func": "const lastUpdate = flow.get(\"lastUpdate\") || 0;\nconst now = Date.now();\n\nif (now - lastUpdate > 10000) {\n    node.warn(\"⚠️ SENSOR FAILURE DETECTED!\");\n    msg.payload = \"⚠️ SENSOR FAILURE DETECTED!\";\n    return msg;\n}\n\nreturn null;",
+        "outputs": 1,
+        "x": 400,
+        "y": 220,
+        "wires": [["watchdog_debug"]]
+    },
+    {
+        "id": "watchdog_debug",
+        "type": "debug",
+        "z": "flow1",
+        "name": "Watchdog Alert",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "complete": "payload",
+        "x": 650,
+        "y": 220,
+        "wires": []
+    }
+]

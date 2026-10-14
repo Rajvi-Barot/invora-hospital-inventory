@@ -1,0 +1,33 @@
+[
+  {
+    "_id": { "$oid": "67b137cb0bb39658d8f0bd39" },
+    "hosp_name": "Max1",
+    "address": "India",
+    "user": { "$oid": "67a953982c560257499ba148" },
+    "dateCreated": { "$date": "2025-02-16T00:56:43.229Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67b288179ae6b1a8feae0731" },
+    "hosp_name": "Hello",
+    "address": "Metaverse",
+    "user": { "$oid": "67a953982c560257499ba148" },
+    "dateCreated": { "$date": "2025-02-17T00:51:35.148Z" },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "65a7e24602e12c44f5994410" },
+    "hosp_name": "City General Hospital",
+    "address": "123 Main St, New York"
+  },
+  {
+    "_id": { "$oid": "65a7e24602e12c44f5994411" },
+    "hosp_name": "Sunrise Medical Center",
+    "address": "456 Broadway Ave, Los Angeles"
+  },
+  {
+    "_id": { "$oid": "65a7e24602e12c44f5994412" },
+    "hosp_name": "Green Valley Hospital",
+    "address": "789 Maple Rd, Chicago"
+  }
+]

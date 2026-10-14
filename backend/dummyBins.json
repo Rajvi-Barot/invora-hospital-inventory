@@ -1,0 +1,38 @@
+[
+  {
+    "binNumber": "B101-1",
+    "color": "blue",
+    "items": ["Surgical Masks", "Gloves", "Hand Sanitizer"],
+    "room": "65a7e24602e12c44f5994410"
+  },
+  {
+    "binNumber": "B101-2",
+    "color": "black",
+    "items": ["IV Drips", "Needles", "Syringes"],
+    "room": "67b561bb45aaa42bfa577d56"
+  },
+  {
+    "binNumber": "B102-1",
+    "color": "green",
+    "items": ["Bandages", "Antiseptics", "Cotton Rolls"],
+    "room": "65a7e24602e12c44f5994411"
+  },
+  {
+    "binNumber": "B201-1",
+    "color": "blue",
+    "items": ["Surgical Tools", "Forceps"],
+    "room": "65a7e24602e12c44f5994412"
+  },
+  {
+    "binNumber": "B202-1",
+    "color": "black",
+    "items": ["Blood Bags", "Test Tubes"],
+    "room": "65a7e24602e12c44f5994412"
+  },
+  {
+    "binNumber": "B301-1",
+    "color": "green",
+    "items": ["Stethoscope", "BP Monitor"],
+    "room": "65a7e24602e12c44f5994413"
+  }
+]

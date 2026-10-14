@@ -1,0 +1,56 @@
+[
+    {
+      "roomNumber": "101",
+      "type": "ICU",
+      "isAvailable": true,
+      "hospital": { "$oid": "65a7e24602e12c44f5994410" }
+    },
+    {
+      "roomNumber": "102",
+      "type": "General Ward",
+      "isAvailable": true,
+      "hospital": { "$oid": "65a7e24602e12c44f5994410" }
+    },
+    {
+      "roomNumber": "103",
+      "type": "Private Room",
+      "isAvailable": false,
+      "hospital": { "$oid": "65a7e24602e12c44f5994410" }
+    },
+    {
+      "roomNumber": "201",
+      "type": "ICU",
+      "isAvailable": true,
+      "hospital": { "$oid": "65a7e24602e12c44f5994411" }
+    },
+    {
+      "roomNumber": "202",
+      "type": "Surgery Room",
+      "isAvailable": true,
+      "hospital": { "$oid": "65a7e24602e12c44f5994411" }
+    },
+    {
+      "roomNumber": "203",
+      "type": "Recovery Room",
+      "isAvailable": false,
+      "hospital": { "$oid": "65a7e24602e12c44f5994411" }
+    },
+    {
+      "roomNumber": "301",
+      "type": "General Ward",
+      "isAvailable": true,
+      "hospital": { "$oid": "65a7e24602e12c44f5994412" }
+    },
+    {
+      "roomNumber": "302",
+      "type": "Maternity Ward",
+      "isAvailable": true,
+      "hospital": { "$oid": "65a7e24602e12c44f5994412" }
+    },
+    {
+      "roomNumber": "303",
+      "type": "ICU",
+      "isAvailable": false,
+      "hospital": { "$oid": "65a7e24602e12c44f5994412" }
+    }
+  ]
